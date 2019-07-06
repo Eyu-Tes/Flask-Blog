@@ -1,0 +1,78 @@
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+#nav-bar nav{
+    border-bottom: 3px solid #ffdc6a;
+}
+.navbar-brand img{
+    height: 40px;
+}
+.navbar-toggler{
+    border: none!important;
+    outline: none!important;
+}
+#nav-bar ul li a{
+    font-weight: 600;
+}
+#nav-bar ul li a:hover{
+    color: #008cba;
+    text-decoration: underline;
+}
+#separator::after{
+    content: '';
+    background-color: #ccc;
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 5px auto;
+}
+
+
+.sidebar{
+    background-color: #ffdc6a;
+}
+.mainbar, .sign, .about, .account, .media, .postbar{ 
+    border-radius: 10px;
+}
+.mainbar:hover{ 
+    box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mainbar .header{
+    margin-bottom: 0;
+}
+.mainbar .header::after, .postbar .header::after{
+    content: '';
+    background-color: #bbb;
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 5px auto;
+}
+.date{
+    font-size: 12px;
+}
+
+
+.media-account{
+    background-color: #ddd;
+    border: 1px solid #ffdc6a;
+}
+.account-img{
+    height: 125px;
+    width: 125px;
+}
+
+
+.article-title{
+    color: inherit;
+}
+.article-title:hover{
+    text-decoration: none;
+    color: #4caf50;
+}
+.article-img{
+    height: 75px;
+    width: 75px;
+}

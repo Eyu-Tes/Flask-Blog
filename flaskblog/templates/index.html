@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="border m-1 mb-3 p-3 mainbar">
+            <div class="media">
+                <div class="media-body">
+                    <p class="header"><span class="text-primary"> {{ post.author.username }} </span>
+                        <span class="text-muted ml-3 date"> {{ post.date.strftime("%B %d, %Y") }} </span></p>
+                    <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+                    {% autoescape flase %}
+                        <p>{{ post.content }}</p>
+                    {% endautoescape %}
+                    
+                </div>
+                <img src="{{ url_for('static', filename='img/profile_pics/'+post.author.img_file) }}"  
+                    class="ml-3 my-1 p-1 rounded-circle article-img"
+                    onerror="this.src='../static/img/profile_pics/default.jpg';
+                            this.style.border='1px solid black';">
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content%}

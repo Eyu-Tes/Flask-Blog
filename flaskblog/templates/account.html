@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="border m-1 mb-3 p-3 account">
+        <div class="media media-account">
+            <img src={{ image_file }}  class="mr-3 my-1 p-1 rounded-circle account-img"
+                onerror="this.src='../static/img/profile_pics/default.jpg';">
+            <div class="media-body m-3">
+                <h2 class="mt-0 mb-3"> {{ current_user.username }} </h2>
+                <p class="text-dark"> {{ current_user.email }} </p>
+            </div>
+        </div>
+        <div class="mt-3">
+            <form method="POST" novalidate enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Update Account</legend>
+                    <div class="form-group">
+                        {{ form.username.label }}
+                        {% if form.username.errors %}
+                            {{ form.username(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div> 
+                        {% else %}
+                            {{ form.username(class="form-control", value=current_user.username) }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email.label }}
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                             </div>
+                        {% else %}
+                            {{ form.email(class="form-control", value=current_user.email) }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.picture.label }}
+                        {{ form.picture(class="form-control-file", value=current_user.img_file) }}
+                        {% if form.picture.errors %}
+                            {% for error in form.picture.errors %}
+                                <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

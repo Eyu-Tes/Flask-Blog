@@ -1,0 +1,6 @@
+myenv/
+flaskblog/site.db
+flaskblog/static/bootstrap-4.3.1-dist/
+flaskblog/static/fontawesome-free-5.8.1-web/
+flaskblog/static/jquery-3.3.1.slim.min
+flaskblog/static/popper.min

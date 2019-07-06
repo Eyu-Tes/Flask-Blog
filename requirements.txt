@@ -1,0 +1,13 @@
+install the following flask packages, using pip install
+
+# flask                         
+# flask-wtf                     ---             to create forms
+# flask-sqlalchemy              ---             to incorporate databases
+# flask-bcrypt                  ---             to hash passwords
+# flask-login                   ---             to manage user sessions
+# flask-mail					---				to send emails
+
++ pillow                        ---             to work with images (PIL --- Python Imaging Library)
+
+* bootstrap-flask               ---             to use flask bootstrap (optional)
+* flask-moment                  ---             to localize date & time
