@@ -1,4 +1,4 @@
-# flask-blog
+# Flask-blog
 
 This is a blog post that allows users to:
 
